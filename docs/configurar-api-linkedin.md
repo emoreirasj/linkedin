@@ -61,6 +61,14 @@ nano ~/.claude/linkedin/token     # cole o token, salve e feche
 chmod 600 ~/.claude/linkedin/token
 ```
 
+No **Windows** (PowerShell), o arquivo precisa ficar em
+`C:\Users\<seu usuário>\.claude\linkedin\token`, sem extensão `.txt`. Salve o token num `token.txt` qualquer e mova com:
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME\.claude\linkedin"
+Move-Item "C:\caminho\atual\token.txt" "$HOME\.claude\linkedin\token"
+```
+
 Se preferir variável de ambiente, use `export LINKEDIN_ACCESS_TOKEN=...`; ela tem
 prioridade sobre o arquivo. O arquivo fica fora do repositório, então não vai
 para o GitHub.
@@ -72,6 +80,8 @@ Na pasta deste repositório:
 ```bash
 python3 .claude/skills/li-publish/publish.py whoami
 ```
+
+No Windows, troque `python3` por `python` (ou `py`).
 
 Deve aparecer o seu nome e um `urn:li:person:...`. Se aparecer erro 401, o token
 está errado ou venceu; 403 indica que falta um dos escopos do passo 4.

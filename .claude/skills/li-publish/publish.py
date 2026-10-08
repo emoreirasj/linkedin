@@ -41,11 +41,13 @@ def load_token():
             "No token. Set LINKEDIN_ACCESS_TOKEN or save it to "
             f"{TOKEN_FILE} (see docs/configurar-api-linkedin.md)."
         )
+    # Windows has no group/other permission bits, so only check elsewhere.
     mode = os.stat(TOKEN_FILE).st_mode
-    if mode & (stat.S_IRWXG | stat.S_IRWXO):
+    if os.name != "nt" and mode & (stat.S_IRWXG | stat.S_IRWXO):
         print(f"warning: {TOKEN_FILE} is readable by others; run chmod 600 on it",
               file=sys.stderr)
-    with open(TOKEN_FILE, encoding="utf-8") as fh:
+    # utf-8-sig drops the byte-order mark Notepad may add.
+    with open(TOKEN_FILE, encoding="utf-8-sig") as fh:
         return fh.read().strip()
 
 
