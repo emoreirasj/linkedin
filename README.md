@@ -22,9 +22,12 @@ Skills do Claude para escrever conteúdo de LinkedIn.
 | `/li-dm` | nota de convite e mensagens de follow-up |
 | `/li-inbox` | triagem da caixa de entrada |
 | `/li-audit` | análise dos posts já publicados |
+| `/li-publish` | publica no seu perfil pela API oficial, só depois do seu "sim" |
 
-Nenhuma skill acessa o LinkedIn: você cola o conteúdo na conversa e copia o
-rascunho para postar.
+Só a `/li-publish` acessa o LinkedIn, pela API oficial e com a sua aprovação
+para cada post. Ela precisa de configuração única: veja
+[docs/configurar-api-linkedin.md](docs/configurar-api-linkedin.md). As outras
+skills só escrevem: você cola o conteúdo na conversa e recebe o rascunho.
 
 ## Primeiro passo
 
