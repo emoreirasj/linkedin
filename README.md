@@ -29,6 +29,8 @@ para cada post. Ela precisa de configuração única: veja
 [docs/configurar-api-linkedin.md](docs/configurar-api-linkedin.md). As outras
 skills só escrevem: você cola o conteúdo na conversa e recebe o rascunho.
 
+Guia rápido de uso e de como postar: [docs/guia-de-uso.md](docs/guia-de-uso.md).
+
 ## Primeiro passo
 
 Copie `templates/voice.md` para `~/.claude/linkedin/voice.md` e preencha com o
